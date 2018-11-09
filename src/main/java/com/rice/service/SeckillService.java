@@ -1,5 +1,6 @@
 package com.rice.service;
 
+import com.rice.dto.Exposer;
 import com.rice.dto.SeckillExecution;
 import com.rice.entity.Seckill;
 
@@ -24,10 +25,16 @@ public interface SeckillService {
     Seckill getById(long seckillId);
 
     /**
+     * 暴露秒杀url
+     * @param seckillId
+     */
+    Exposer exposerSeckillUrl(long seckillId);
+
+    /**
      * 秒杀执行操作
      * @param seckillId
      * @param userPhone
      * @return
      */
-    SeckillExecution executeSeckill(long seckillId, long userPhone) throws Exception;
+    SeckillExecution executeSeckill(Long seckillId, Long userPhone, String md5) throws Exception;
 }
