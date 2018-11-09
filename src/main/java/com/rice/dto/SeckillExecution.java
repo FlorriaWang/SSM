@@ -23,6 +23,12 @@ public class SeckillExecution {
         this.successKilled = successKilled;
     }
 
+    public SeckillExecution(long seckillId,SeckillStatEnum seckillStatEnum) {
+        this.seckillId = seckillId;
+        this.state = seckillStatEnum.getState();
+        this.stateInfo = seckillStatEnum.getStateInfo();
+    }
+
     public long getSeckillId() {
         return seckillId;
     }
